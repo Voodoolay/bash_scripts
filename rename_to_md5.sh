@@ -8,7 +8,7 @@ function waitforfreeslot(){
   
 set -o pipefail
 for i in *; do	
-	waitforfreeslot $MAXPARALLEL
+	waitforfreeslot 
 	echo "Processing: $i"
 	mv "${i}" ./1/$(md5sum "${i}" | awk '{print $1}').${i##*.} &
 done
